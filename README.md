@@ -2,10 +2,11 @@
   <br>
   <img src="https://ngrx.io/assets/images/badge.svg" width="200">
   <br><br>
-  Frontend - Ngrx Admin
+  <a href="https://martinbobbio.github.io/frontend-ngrx">
+    Frontend - Ngrx Admin
+  </a>
   <br>
 </h1>
-<h4 align="center"><a href="https://martinbobbio.github.io/frontend-ngrx">Frontend - Ngrx Admin</a></h4>
 
 
 ## Descripción
