@@ -5,7 +5,7 @@
   <a href="https://martinbobbio.github.io/frontend-ngrx">
     Frontend - Ngrx Admin
   </a>
-  <br>
+  <br><br>
 </h1>
 
 
