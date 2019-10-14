@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Agregar Ingreso / Egreso</h4>
+            <p class="card-description">
+              Especifique el monto y el tipo
+            </p>
+
+            <form [formGroup]="form" (ngSubmit)="createEgressIncome()">
+              
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" 
+                       class="form-control" 
+                       placeholder="Descriptión"
+                       formControlName="description"
+                       name="description">
+              </div>
+
+              <div class="form-group">
+                  <label>Mount</label>
+                  <input type="number" 
+                         class="form-control" 
+                         formControlName="mount"
+                         placeholder="Mount"
+                         name="mount">
+                    <p>
+                      Must be a positive mount
+                    </p>
+                </div>
+
+              <div class="form-group">
+                  <label>Type</label>
+                  <br>
+                  <button (click)="type='egress'" *ngIf="type === 'income'" type="button" class="btn btn-primary btn-block">Income</button>
+                  <button (click)="type='income'" *ngIf="type === 'egress'" type="button" class="btn btn-warning btn-block">Egress</button>
+              </div>
+
+              <hr>
+              <button [disabled]="form.invalid" type="submit" class="btn btn-success mr-2">
+                <i class="fa fa-save"></i>
+                Agregar
+              </button>
+
+              <button type="reset" class="btn btn-light">Cancelar</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+          

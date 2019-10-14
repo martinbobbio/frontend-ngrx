@@ -1,0 +1,77 @@
+<div class="row">
+
+  <div class="col-6">
+    <div class="card card-statistics">
+      <div class="card-body">
+        <div class="clearfix">
+          <div class="float-left">
+            <i class="fa fa-money-bill-alt text-success icon-lg"></i>
+          </div>
+          <div class="float-right">
+            <p class="mb-0 text-right">Income</p>
+            <div class="fluid-container">
+              <h3 class="font-weight-medium text-right text-success mb-0">${{income | number}}</h3>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted mt-3 mb-0">
+          <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> Total: {{incomeTotal}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card card-statistics">
+      <div class="card-body">
+        <div class="clearfix">
+          <div class="float-left">
+            <i class="fa fa-shipping-fast text-danger icon-lg"></i>
+          </div>
+          <div class="float-right">
+            <p class="mb-0 text-right">Egress</p>
+            <div class="fluid-container">
+              <h3 class="font-weight-medium text-right text-danger mb-0">${{egress | number}}</h3>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted mt-3 mb-0">
+          <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> Total: {{egressTotal}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row m-5">
+    <div class="col-12">
+      <div class="card card-statistics">
+        <div class="card-body">
+          <div class="clearfix">
+            <div class="float-left">
+              <i class="fa fa-building text-info icon-lg"></i>
+            </div>
+            <div class="float-right">
+              <p class="mb-0 text-right">Difference</p>
+              <div class="fluid-container">
+                <h3 [ngClass]="{'text-success': income - egress > 0,'text-danger': income - egress < 0}" class="font-weight-medium text-right mb-0">
+                  ${{ income - egress | number }}
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+    <div class="col-12 p-5" *ngIf="income > 0 || egress > 0">
+      <div class="card card-statistics" *ngIf="graphicData">
+        <div class="card-body">
+          <h1 class="card-title">Graphics</h1>
+          <div style="display:block">
+            <canvas baseChart [data]="graphicData" [labels]="graphicLabels" chartType="doughnut"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
