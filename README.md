@@ -12,6 +12,8 @@
 ## Descripción
 
 Frontend con el motivo de prácticas de ngrx (Redux en Angular).
+<br>
+Tecnologias usadas: Angular Ngrx - Firebase
 <br><br><br>
 
 ### Dashboard
